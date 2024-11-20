@@ -1,0 +1,787 @@
+\documentclass[11pt]{beamer}
+\usepackage[latin2]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\usepackage{polynom}
+\usepackage{longdivision}
+
+\newcounter{saveenumi}
+\newcommand{\seti}{\setcounter{saveenumi}{\value{enumi}}}
+\newcommand{\conti}{\setcounter{enumi}{\value{saveenumi}}}
+
+\resetcounteronoverlays{saveenumi}
+
+\usetheme{metropolis}
+\usepackage[bahasa]{babel}
+\begin{document}
+	\author{Handy Frank Wily Ambarita}
+	\title{Fungsi Polinomial}
+	%\subtitle{}
+	%\logo{}
+	\institute{SMA Kr. Petra 2}
+	%\date{}
+	%\subject{}
+	
+	
+	%\setbeamercovered{transparent}
+	%\setbeamertemplate{navigation symbols}{}
+	\begin{frame}[plain]
+		\maketitle
+		\tableofcontents
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Pengertian Polinomial}
+		\textbf{Polinomial} adalah suatu ekspresi matematika yang terdiri atas bagian yang tidak diketahui (variabel) dan koefisiennya beserta operasi penjumlahan, pengurangan, perkalian, pembagian, atau perpangkatan dengan bilangan bulat nonnegatif, dan memiliki suku yang terbatas.
+		\begin{align*}
+			\underbrace{8x}_\text{suku ke-1}\overbrace{-5}^\text{suku ke-2}
+		\end{align*}
+		\begin{exampleblock}{Contoh}
+				Ekspresi $8x-5$ terdiri atas dua suku yaitu, $8x$ dan $-5$. Pada $8x$, bagian yang tidak diketahui dinyatakan dalam $x$; bilangan $8$ adalah koefisiennya. Bilangan $-5$ disebut sebagai konstanta.
+		\end{exampleblock}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pengertian Polinomial}
+		Untuk menentukan apakah suatu ekspresi adalah polinomial, perhatikan karakter dari variabel yang ada di ekspresi itu.
+				
+		\begin{exampleblock}{Contoh}
+			Tentukan apakah tiap ekspresi berikut adalah polinomial!
+			\begin{enumerate}
+				\item $-6x^2+x+1$
+				\item $\frac{x^4}{7}-3x+5$
+				\item $xy+xz-yz$
+			\end{enumerate}
+		\end{exampleblock}
+				
+	
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Bukan Polinomial}
+		Perhatikan ekspresi-ekspresi berikut. Tentukan mana yang bukan polinomial!
+		\begin{exampleblock}{Contoh}
+			\begin{enumerate}
+				\item $x^2+4x-4$
+				\item $x^{-3}+4x$
+				\item $\sqrt{x}-4x+8$
+				\item $\frac{3}{x^2}+6x-6$
+				\item $\log{x}+x^2-7$
+				\item $\sin{x}+\cos{x}+5$
+			\end{enumerate}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Derajat Polinomial}
+		\begin{enumerate}
+			\item Derajat dari sebuah suku (monomial) adalah jumlah dari pangkat yang ada pada \textbf{variabel} di sebuah suku. 
+			\item Derajat polinomial adalah salah satu pembeda antara satu polinomial dengan polinomial lain.
+			\item Derajat polinomial adalah derajat terbesar dari semua suku yang ada di sebuah polinomial.
+
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Derajat Polinomial}
+		\begin{exampleblock}{Contoh}
+			Dapatkan derajat dari tiap polinomial berikut!
+			\begin{enumerate}
+				\item $x^2+10$
+				\item $xy^3-10^5x$
+				\item $(-3)^7x^4-6x^2+9$
+				\item $a+a^2-a^5$
+				\item $x+y+z$
+				\item $5^4x+xy-3y$
+				\item $x^4y^3-2x^5+8y^4$
+			\end{enumerate}
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Fungsi Polinomial}
+		Fungsi polinomial adalah fungsi yang aturannya menggunakan ekspresi polinomial. Berikut adalah fungsi polinomial $f$ dengan satu variabel ($x$).
+		\begin{align*}
+			f(x)=a_nx^n+a_{n-1}x^{n-1}+a_{n-2}x^{n-2}+...+a_2x^2+a_1x+a_0
+		\end{align*}
+		dengan $a_0$ adalah konstanta dan $a_n\neq0$.
+		
+		\begin{exampleblock}{Contoh}
+			Dari fungsi $f(x)=4x^5-3x^3-x+10$ kita bisa dapatkan:
+			\begin{align*}
+				n=5, a_5=4, a_4=0, a_3=-3, a_2=0, a_1=-1, a_0=10.
+			\end{align*}
+		\end{exampleblock}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Nilai dari Fungsi Polinomial}
+		
+		\begin{exampleblock}{Contoh}
+			\begin{enumerate}
+				\item Diberikan $f(x)=x^2-4x+3$. Dapatkan nilai dari $f(1)$!
+				\item Diberikan $P(x)=3x^3+6x^2-13x-7$. Tentukan nilai dari $P(0)+P(2)$!
+			\end{enumerate}
+		\end{exampleblock}
+		Terkadang istilah fungsi polinomial dan polinomial mengacu pada hal yang sama. Sebagai contoh fungsi $P(x)=3x^3+6x^2-13x-7$ kadang disebut fungsi polinomial $P$ atau disebut polinomial saja.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Operasi Aljabar Polinomial}
+		\begin{enumerate}
+			\item Penjumlahan atau pengurangan dua polinomial atau lebih bisa dilakukan pada suku-suku yang sejenis.
+			\item Perkalian di antara dua polinomial dilakukan dengan mengalikan masing-masing suku dengan semua suku dari polinomial yang lain.
+			\item Pembagian akan dibahas di topik yang lain.
+			\item Perpangkatan polinomial menggunakan konsep yang sama dengan perpangkatan pada bilangan real.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Operasi Aljabar Polinomial}
+		\begin{exampleblock}{Contoh}
+			Diberikan $P(x)=x^3-3x+5$ dan $Q(x)=4x^3+4x-10$. Dapatkan $P(x)+Q(x)$ dan $P(x)-Q(x)$. \\Jawab:
+			\begin{align*}
+				P(x)+Q(x)&=(\underbrace{x^3-3x+5}_{P(x)})+(\underbrace{4x^3+4x-10}_{Q(x)})\\
+				&=(x^3+4x^3)+\left((-3x)+4x\right)+\left(5+(-10)\right)\\
+				&=5x^3+x-5		
+			\end{align*}
+		\end{exampleblock}
+		\textit{(lanjut ke operasi pengurangan.)}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Operasi Aljabar Polinomial}
+		
+		Untuk $P(x)-Q(x)$ berhati-hati dengan tanda minus. Perhatikan pengerjaan berikut!
+		\begin{align}
+			P(x)-Q(x)&=(\underbrace{x^3-3x+5}_{P(x)})-(\underbrace{4x^3+4x-10}_{Q(x)})\\
+			&=x^3-3x+5-4x^3 \textcolor{green}{-}4x \textcolor{green}{+}10\\
+			&=-3x^3-7x+15.
+		\end{align}
+		Perhatikan pengerjaan berikut dan temukan di mana letak \textcolor{red}{kesalahannya}!
+		\begin{align}
+			P(x)-Q(x)&=(\underbrace{x^3-3x+5}_{P(x)})-(\underbrace{4x^3+4x-10}_{Q(x)})\\
+			&=x^3-3x+5-4x^3  \textcolor{red}{+}4x \textcolor{red}{-}10\\
+			&=-3x^3+x-5.
+		\end{align}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Kesamaan Dua Polinomial}
+		Dua polinomial $P$ dan $Q$ dikatakan sama jika konstanta, variabel, koefisien dan derajat dari tiap variabel sama.
+		\begin{exampleblock}{Contoh}
+			$P(x)=5x^2-3x-1$ dan $Q(x)=5x^2-3x-1$ adalah dua polinomial yang sama. Sedangkan polinomial $R(x)=5x^2+3x-1$ berbeda dengan polinomial $P(x)$ dan $Q(x)$.
+		\end{exampleblock}
+		Untuk menyatakan dua polinomial yang sama kadang menggunakan simbol $'\equiv'$ (ekuivalen). Sehingga polinomial $P(x)$ dan $Q(x)$ berlaku $P(x)\equiv Q(x)$.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Kesamaan Dua Polinomial}
+		\begin{exampleblock}{Contoh}
+			Diberikan polinomial $G(x)=x^3+sx^2+3$ dan $H(x)=rx^3-x^2-t$. Jika $G(x)\equiv H(x),$ dapatkan $r, s,$ dan $t$!\\
+			
+			Jawab:\\
+			Karena $G(x)$ dan $H(x)$ ekuivalen, maka
+			\begin{align*}
+				x^3&\equiv rx^3\rightarrow r=1\\ sx^2&\equiv-x^2 \rightarrow s=-1 \\3&\equiv-t \rightarrow t=-3.
+			\end{align*}
+			Jadi, $r=1, s=-1,$ dan $t=-3.$
+		\end{exampleblock}
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Kesamaan Dua Polinomial}
+		
+		\begin{exampleblock}{Contoh}
+			Diberikan $P(x)=x^4+Ax^3-4x^2-10x+3$. Polinomial itu ekuivalen dengan $Q(x)=(x^2+2x+3)(x^2+Bx+1)$. Dapatkan $A$ dan $B$.
+		\end{exampleblock}
+		
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{Pembagian Antarpolinomial}
+		Perhatikan pembagian bersusun berikut!
+		\begin{align*}
+			\intlongdivision{1000}{7}	
+		\end{align*}
+		Terlihat operasi 1000 dibagi 7. Didapat \textbf{hasilnya} 142 dan \textbf{sisa} 6. Sehinga kita bisa tulis
+		\begin{align*}
+			1000 = 7\times142+6.
+		\end{align*} 
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pembagian Antarpolinomial}
+		Pembagian antarpolinomial juga menggunakan konsep yang sama seperti pembagian pada dua bilangan bulat tadi. Untuk metode pembagian antarpolinomial, selain menggunakan metode pembagian bersusun kita juga menggunakan metode Horner.
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Metode Pembagian Bersusun}
+		Perhatikan pembagian $x^3-10x^2+17x+28$ dengan $x+1$ menggunakan metode bersusun berikut!
+		\begin{center}
+			\polylongdiv[style=A]{x^3-10x^2+17x+28}{x+1}
+		\end{center}
+		Coba lakukan untuk pembagian $4x^3-2x^2+4x-3$ dengan $2x^2+3$.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Pembagian Bersusun}
+		
+		\begin{center}
+			\polylongdiv[style=A]{4x^3-2x^2+4x-3}{2x^2+3}
+		\end{center}
+		Perhatikan bahwa proses pembagian berhenti karena derajat dari sisa $(2x)$ lebih kecil dari derajat pembagi $(2x^2+3)$.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Pembagian Bersusun}
+		Untuk sembarang polinomial $P(x)$ dan $Q(x)\neq0$ berlaku $P(x)=Q(x)R(x)+S(x)$. Polinomial $Q(x)$ disebut pembagi, $R(x)$ disebut hasil dan $S(x)$ disebut sisa bagi. \textbf{Derajat sisa bagi} harus \textbf{lebih kecil} dari \textbf{derajat pembagi}. \\
+		Syarat pembagian berhenti:
+		\begin{enumerate}
+			\item Pembagian berhenti jika sisa dari pembagian memiliki derajat lebih kecil dibandingkan pembagi atau;
+			\item Pembagian berhenti jika sisa dari pembagian adalah nol.
+		\end{enumerate}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Horner}
+		Perhatikan pembagian $x^3-10x^2+17x+28$ dengan $x+1$ menggunakan metode Horner berikut!
+		\begin{center}
+			\polyhornerscheme[x=-1,stage=1,tutor=true,resultstyle=\color{blue}]{x^3-10x^2+17x+28}	
+			
+			\polyhornerscheme[x=-1,stage=2,tutor=true,resultstyle=\color{blue}]{x^3-10x^2+17x+28}
+			
+			\polyhornerscheme[x=-1,stage=3,tutor=true,resultstyle=\color{blue}]{x^3-10x^2+17x+28}
+						
+		\end{center}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Horner}
+		\textit{(Lanjutan dari persoalan sebelumnya)}
+			\begin{center}
+				
+				\polyhornerscheme[x=-1,stage=4,tutor=true,resultstyle=\color{blue}]{x^3-10x^2+17x+28}
+				
+				\polyhornerscheme[x=-1,stage=8,tutor=true,tutorlimit=7,resultstyle=\color{blue}]{x^3-10x^2+17x+28}		
+			\end{center}
+		Didapat sisa pembagian adalah $\textcolor{blue}{0}$ dan hasil pembagian $\frac{x^2-11x+28}{1}$.
+				
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Horner}
+		Tentukan hasil $3x^4-2x^2+x-3$ dibagi $3x+1$ dengan metode Horner. 
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Metode Horner}
+		Tentukan hasil $3x^4-2x^2+x-3$ dibagi $3x+1$ dengan metode Horner.\\
+		Mari kita bahas!
+		\begin{center}
+			\polyhornerscheme[x=-1/3,stage=10,tutor=false,resultstyle=\color{blue}]{3x^4-2x^2+x-3}
+		\end{center}
+		Diperoleh hasil bagi $\frac{3x^3-x^2-\frac{5}{3}x+\frac{14}{9}}{3}=x^3-\frac{x^2}{3}-\frac{5}{9}x+\frac{14}{27}$ dan sisa pembagian $-\frac{95}{27}$.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		
+		\begin{theorem}[Teorema Sisa]
+			Jika suatu suku banyak $P(x)$ dibagi dengan $x-k$, sisa pembagiannya adalah konstanta $S=P(k)$.
+		\end{theorem}
+		
+		\begin{proof}
+			Silakan didiskusikan bersama.
+		\end{proof}
+		
+		Teorema Sisa bisa dinyatakan dalam bentuk berikut.
+		\begin{block}{Teorema Sisa}
+			\begin{align*}
+				P(x)&=(x-k)H(x)+S.
+			\end{align*}
+		\end{block}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		\begin{theorem}[Teorema Sisa II]
+			Jika suatu suku banyak $P(x)$ dibagi dengan $ax-k$, sisa pembagiannya adalah konstanta $S = P(\frac{k}{a})$.
+		\end{theorem}
+		
+		\begin{proof}
+			Silakan dibuktikan sendiri.
+		\end{proof}
+		
+		\begin{block}{Teorema Sisa II}
+			
+			\begin{align}
+				P(x)&=(ax-k) H(x)+S\\
+				&= a\left( x-\frac{k}{a} \right)   H(x) +S\\
+				&= \left( x-\frac{k}{a} \right) a H(x) +S\label{sisa2}
+			\end{align}
+			
+			
+		\end{block}
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Perhatikan (\ref{sisa2}). Jika kita menggunakan metode Horner, hasil dari pembagian masih tersamarkan dengan bentuk $aH(x)$. Oleh karena itu ketika menggunakan metode Horner, hasil dari pembagian didapat dengan melakukan pembagian dengan koefisien $ax$.\\
+		\begin{align*}
+			\text{Hasil pembagian}=\frac{aH(x)}{a}.
+		\end{align*}
+				
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		\begin{block}{Perhatian}
+			\begin{itemize}
+				\item Derajat sisa pembagian lebih kecil dari derajat pembagi. Jika pembagi adalah derajat $n$, derajat sisa maksimal $n-1$.
+				\item Jika polinomial $P(x)$ dibagi dengan $(ax-k)$, $P(x)=\underbrace{(ax-k)}_{\textbf{derajat 1}}H(x)+\underbrace{S}_{\textbf{derajat 0}}$ dengan $S\in \mathbb{R}$.
+				\item Jika polinomial $P(x)$ dibagi dengan $(ax^2+bx+c)$, $P(x)=\underbrace{(ax^2+bx+c)}_{\textbf{derajat 2}}H(x)+\underbrace{(px+q)}_{\textbf{derajat 1}}$.
+				\item Derajat polinomial yang dibagi minimal sama dengan derajat polinomial pembagi.
+			\end{itemize}
+		\end{block}
+		 
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Dapatkan sisa dari $3x^4-2x^3+x-7$ dibagi $x-2$.\\ Jawab:\\
+		Pembagi $x-2$ adalah polinomial berderajat 1, maka sisa pembagian haruslah berderajat nol (konstanta). Berdasarkan teorema sisa didapat $k=2$ dan $P(2)=3(2)^4-2(2)^3+2-7=27$. Sehingga, 27 adalah sisa dari $3x^4-2x^3+x-7$ dibagi $x-2$.
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Dapatkan sisa pembagian $P(x)=x^5-2x^2+4x-1$ dengan $x^2-4$ menggunakan teorema sisa. \\Jawab\\
+		Dengan teorema sisa polinomial $P(x)=x^5-2x^2+4x-1$ bisa ditulis menjadi
+		\begin{align}
+			x^5-2x^2+4x-1=(x^2-4)H(x)+\underbrace{(px+q)}_{\textbf{sisa bagi}}.\label{cth}
+		\end{align}
+		Kemudian dengan menggunakan $(\ref{cth})$ kita dapatkan 
+		\begin{align}
+			2^5-2(2)^2+4(2)-1&=(2^2-4)H(2)+(2p+q)\nonumber \\
+				31&=2p+q \label{cth2} \\ 
+			(-2)^5-2(-2)^2+4(-2)-1&=((-2)^2-4)H(-2)+(-2p+q)\nonumber \\
+				-49&=-2p+q. \label{cth3}
+		\end{align}		
+		
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Ambil (\ref{cth2}) dan (\ref{cth3}),
+		\begin{align*}
+			31&=2p+q\\
+			-49&=-2p+q.
+		\end{align*}
+		Dengan menggunakan eliminasi-substitusi didapat $p=20$ dan $q=-9$. Sehingga, sisa bagi $P(x)=x^5-2x^2+4x-1$ dengan $x^2-4$ adalah $20x+(-9)$.	
+	\end{frame}	
+		
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Kerjakan soal-soal berikut!
+		\begin{enumerate}
+			\item Dapatkan sisa dari $2x^3+5x^2-7x+3$ dibagi $x-2$.
+			\item Dapatkan sisa dari $3x^3-2x^2+x+4$ dibagi $2x-2$.
+			\item Suku banyak $R(x)=5x^3-(5a-3)x^2+3x+2a$ dibagi dengan $5x-2$ bersisa 8 dengan $a\in \mathbb{R}$. Dapatkan $a$.
+			\item Polinomial $P(x)$ bersisa 3 jika dibagi $x+1$ dan bersisa 1 jika dibagi $x-1$. Dapatkan sisa dari $P(x)$ dibagi $(x-1)(x+1)$.
+			\item Sisa pembagian $A(x-2)^{2024}+(x-1)^{2025}-(x-2)^2$ oleh $x^2-3x+2$ adalah $Bx-1$. Dapatkan $5A+3B$. 
+			
+		\end{enumerate}
+	\end{frame}	
+	
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Ayo kita sederhanakan.
+		\begin{enumerate}
+			\item Jika polinomial $P(x)$ dibagi dengan $ax-k$, sisa bagi didapat dari $P(x)=p$ dengan $p\in \mathrm{R}$.
+			\item Jika polinomial $P(x)$ dibagi dengan $ax^2+bx+c$, sisa bagi didapat dari $P(x)=px+q$.
+			\item Jika polinomial $P(x)$ dibagi dengan $ax^3+bx^2+cx+d$, sisa bagi didapat dari $P(x)=px^2+qx+r$. 
+		\end{enumerate}
+	\end{frame}	
+		
+	\begin{frame}
+		\frametitle{Teorema Sisa}
+		Jika $P(x)$ dibagi dengan $x+2$, bersisa 4. Jika $P(x)$ dibagi dengan $9x-3$ bersisa 2. Dapatkan sisa dari $\frac{P(x)}{(x+2)(9x-3)}$.\\
+		Jawab:\\
+		Karena $P(x)$ dibagi $x+2$ bersisa 4, maka $P(-2)=4$ dan karena $P(x)$ dibagi $9x-3$ bersisa 2, maka $P\left(\frac{1}{3}\right)=2$. Lalu, $P(x)$ dibagi $\underbrace{(x+2)(9x-3)}_{\textbf{derajat 2}}$ maka sisa baginya didapat dari $P(x)=\underbrace{px+q}_{\textbf{derajat 1}}$. Sehingga,
+		\begin{align*}
+			P(-2)&=(-2)p+q=4\\
+			P\left(\frac{1}{3}\right)&=\left(\frac{1}{3}\right)p+q=2
+		\end{align*}
+		 Dengan menggunakan eliminasi-substitusi didapat $p=-\frac{6}{7}$ dan $q=\frac{16}{7}$. Oleh karena itu sisa baginya adalah $-\frac{6}{7}x+\frac{16}{7}.$ 
+				
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		\begin{itemize}
+			\item Bilangan $24=1\times 2\times 3\times 4$
+			\item Bilangan 1, 2, 3, 4, dan 24 habis membagi 24.
+			\item Kelima bilangan tadi disebut sebagai faktor dari 24.
+			\item Jika terdapat $\frac{P(x)}{Q(x)}$ dan bersisa nol, pembagi dan hasil bagi disebut sebagai faktor dari $P(x)$.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		Misalkan polinomial $P(x)$ dibagi dengan polinomial $Q(x)$ dan sisa pembagiannya adalah nol, maka polinomial $Q(x)$ adalah faktor dari polinomial $P(x)$.
+		\begin{exampleblock}{Contoh}
+			Polinomial $x^2-3x+2$ habis dibagi dengan $x-1$, maka suku banyak $x-1$ adalah faktor dari $x^2-3x+2$. Coba temukan faktor lain dari $x^2-3x+2$.  
+		\end{exampleblock}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		\begin{itemize}
+			\item \textbf{Teorema Akar Rasional}\\
+			Kemungkinan akar-akar rasional (solusi) suatu persamaan polinomial
+			\begin{align*}
+				a_nx^n+a_{n-1}x^{n-1}+...+a_2x^2+a_1x+a_0=0
+			\end{align*}
+			 adalah $\frac{p}{q}$ dengan $p$ adalah faktor-faktor dari $a_0$ dan $q$ adalah faktor dari $a_n$.
+			\item Dimungkinkan suatu persamaan polinomial tidak memiliki akar yang rasional. 
+			\item Contoh: $x^2-5=0.$ Mau berapapun $p$ dan $q$ yang dipilih, tidak akan pernah menghasilkan akar yang rasional.
+			\item Teori ini akan lebih bermanfaat jika dipadukan dengan metode Horner.
+		\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		Dapatkan faktor dari polinomial $x^4-15x^2-10x+24$ dengan menggunakan Teorema Akar Rasional.\\Jawab:
+		Dari $x^4-15x^2-10x+24$ diperoleh $n=4, a_0=24$ dan $a_4=1$.\\
+		Nilai $p$ didapat dari faktor $a_0=24:\pm1, \pm2, \pm3, \pm4, \pm6, \pm8, \pm12, \pm24.$\\
+		Nilai $q$ didapat dari faktor $a_n=1:\pm1$\\
+		Kita coba untuk $p=1$ dan $q=1$.
+		\begin{center}
+			\polyhornerscheme[x=1,stage=10,tutor=false,resultstyle=\color{blue}]{x^4-15x^2-10x+24}.
+		\end{center}
+		Ternyata $x=1$ adalah akar rasional atau $x-1$ adalah faktor dari $x^4-15x^2-10x+24$.
+		  
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		Diberikan persamaan polinomial $P(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_2x^2+a_1x+a_o=0$. Solusi dari persamaan itu adalah
+		\begin{enumerate}
+			\item $x=1$ jika jumlah semua koefisien dan konstanta yang ada adalah nol $(a_n+a_{n-1}+...+a_2+a_1+a_0=0)$.
+			\item $x=-1$ jika jumlah semua koefisien variabel pangkat genap sama dengan jumlah semua koefisien variabel pangkat ganjil.
+		\end{enumerate}
+		Contoh:\\
+		\begin{enumerate}
+			\item Persamaan $-3x^5-2x^3+x+4=0$ memiliki salah satu solusi yaitu, $x=1$ sebab $-3+(-2)+1+4=0$.
+			\item Persamaan $-x^4+8x^3-5x+4=0$ memiliki solusi $x=-1$ sebab $\underbrace{-1}_{\text{dari }-x^4}+4=\underbrace{8}_{\text{dari }8x^3}+\underbrace{(-5)}_{\text{dari }-5x}$.
+		\end{enumerate}
+		 		
+	\end{frame}
+		
+	\begin{frame}
+		\frametitle{Diskriminan}
+		Persamaan $ax^2+bx+c=0$, dapat diselesaikan dengan metode diskriminan
+		\begin{align*}
+			x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}.
+		\end{align*}
+		Nilai diskriminan $(D=b^2-4ac)$ bisa menghasilkan tiga kemungkinan:
+		\begin{enumerate}
+			\item Jika $D<0$, polinomial $ax^2+bx+c$ tidak mempunyai solusi real.
+			\item Jika $D=0$, polinomial $ax^2+bx+c$ memiliki solusi kembar.
+			\item Jika $D>0$, polinomial $ax^2+bx+c$ memiliki solusi real yang berlainan.
+		\end{enumerate}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Diskriminan}
+		Dapatkan solusi dari $x^2-7x+12=0$ dengan menggunakan metode diskriminan.\\Jawab:\\
+		Dari bentuk $x^2-7x+12=0$ didapat $a=1, b=-7,$ dan $c=12$. Menggunakan metode diskriminan didapat
+		\begin{align*}
+			x_{1,2}&=\frac{-(-7)\pm\sqrt{(-7)^2-4(1)(12)}}{2(1)}\\
+			&=\frac{7\pm\sqrt{49-48}}{2}\\
+			&=\frac{7\pm1}{2}\\
+			x_1 = 4 \text{ dan } x_2=3.
+		\end{align*}
+		Jadi, solusi persamaan adalah $x_1=4$ dan $x_2=3$.
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Diskriminan}
+		Dari apa yang kita kerjakan di salindia sebelumnya kita mendapat $x_1=4$ dan $x_2=3$. Sehingga bisa diperoleh
+			\begin{align*}
+				x^2-7x+12=(x-4)(x-3).
+			\end{align*}	
+		Jadi, kita bisa menggunakan metode diskriminan untuk mencari faktor dari polinomial derajat dua.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Diskriminan}
+		\begin{itemize}
+			\item Nilai diskriminan dapat digunakan untuk menentukan apakah suatu polinomial dapat difaktorkan atau tidak.
+			\item Polinomial $x^2-7x+12=0$ memiliki nilai diskriminan 1.
+			\item Ekspresi $x^2+x+3$ memiliki nilai diskriminan $D=1^2-4(1)(3)=-11.$ Sehingga tidak bisa difaktorkan lagi.
+			\item Tunjukkan bahwa bentuk $x^2+3$ tidak bisa difaktorkan lagi.
+			
+		\end{itemize}
+		 
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		\begin{enumerate}
+			\item Dapatkan faktor dari $2x^2-3x-2$!
+			\item Tentukan nilai $a$ dan $b$ agar $P(x)=ax^3-5x^2-22x+b$ mempunyai faktor $x^2-4x-5$. 
+			\item Tentukan faktor-faktor linier dari $x^4+3x^3+2x^2+3x-9$!
+			\item Evaluasi apakah $x^2-3x+5$ dapat difaktorkan.
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Faktor}
+		Dapatkan solusi dari persamaan $x^3-3x^2+x+2=0$.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pecahan Parsial}
+		Misalkan $P(x)=x-6$ dan $Q(x)=x^2-5x+6$. Jika $P(x)$ dibagi $Q(x)$ jelas hasilnya nol dan sisanya adalah $P(x)$. Apakah ada hal lain yang bisa kita lakukan untuk pembagian itu? Perhatikan ilustrasi berikut!
+		\begin{align}
+			\frac{x-6}{x^2-5x+6}=\frac{4}{x-2}+\frac{-3}{x-3}\label{fraksi}
+		\end{align}
+		Dari $(\ref{fraksi})$ kita bisa lihat bahwa $\frac{x-6}{x^2-5x+6}$ dapat dinyatakan dalam jumlahan dua pecahan. Pengubahan bentuk itu penting terutama pada penyelesaian soal integral.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pecahan Parsial}
+		
+	\begin{tabular}{|c|c|}
+		\hline faktor di pembagi
+		&  suku pada pecahan parsial\\
+		\hline $px+q$
+		&  $\frac{A}{px+q}$\\
+		\hline $(px+q)^k$ 
+		& $\frac{A_{1}}{px+q}+\frac{A_{2}}{(px+q)^2}+...+\frac{A_{k}}{(px+q)^k}$ \\
+		\hline $px^2+qx+r$
+		& $\frac{Ax+B}{px^2+qx+r}$ \\
+		\hline $(px^2+qx+r)^k$
+		& $\frac{A_{1}x+B_1}{px^2+qx+r}+\frac{A_{2}x+B_2}{(px^2+qx+r)^2}+...+\frac{A_{k}x+B_k}{(px^2+qx+r)^k}$ \\
+		\hline
+	\end{tabular}
+	Contoh:
+		\begin{enumerate}
+			\item $\frac{x-3}{x^2-4}=\frac{x-3}{(x+2)(x-2)}=\frac{A}{x+2}+\frac{B}{x-2}$
+			\item $\frac{7x-6}{(x^2-4)^2}=\frac{7x-6}{(x+2)^2(x-2)^2}=\frac{A}{x+2}+\frac{A_2}{(x+2)^2}+\frac{B}{x-2}+\frac{B_2}{(x-2)^2}$.
+		\end{enumerate}	
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pecahan Parsial}
+		Diberikan $\frac{2x^2-1}{(3x+1)(x-1)^2}$. Nyatakan dalam bentuk pecahan parsial.\\
+		\begin{align*}
+			\frac{\textcolor{red}{2}x^2\textcolor{green}{-1}}{(3x+1)(x-1)^2}&\equiv \frac{A}{3x+1}+\frac{B}{x-1}+\frac{C}{(x-1)^2}\\
+			&\equiv\frac{A(x-1)^2+B(x-1)(3x+1)+C(3x+1)}{(3x+1)(x-1)^2}\\
+			&\equiv \frac{A(x^2-2x+1)+B(3x^2-2x-1)+C(3x+1)}{(3x+1)(x-1)^2}\\
+			&\equiv \frac{Ax^2-2Ax+A+3Bx^2-2Bx-B+3Cx+C}{(3x+1)(x-1)^2}\\
+			&\equiv \frac{Ax^2+3Bx^2-2Ax-2Bx+3Cx+A-B+C}{(3x+1)(x-1)^2}\\
+			&\equiv \frac{\textcolor{red}{(A+3B)}x^2+\textcolor{blue}{(-2A-2B+3C)x}\textcolor{green}{+(A-B+C)}}{(3x+1)(x-1)^2}
+		\end{align*}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pecahan Parsial}
+		\begin{align*}
+			\frac{\textcolor{red}{2}x^2\textcolor{green}{-1}}{(3x+1)(x-1)^2}&\equiv
+			\frac{\textcolor{red}{(A+3B)}x^2+\textcolor{blue}{(-2A-2B+3C)x}\textcolor{green}{+(A-B+C)}}{(3x+1)(x-1)^2}
+		\end{align*}	
+		Didapat SPLTV
+		\begin{align*}
+			A+3B&=2\\
+			-2A-2B+3C&=0 \text{ (kenapa?)}\\
+			A-B+C&=-1
+		\end{align*}	
+		$A=-\frac{7}{16}, B=\frac{13}{16}, \text{dan } C=\frac{1}{4}$. Sehingga, 
+		\begin{align*}
+			\frac{2x^2-1}{(3x+1)(x-1)^2}&\equiv \frac{-\frac{7}{16}}{3x+1}+\frac{\frac{13}{16}}{x-1}+\frac{\frac{1}{4}}{(x-1)^2}\\
+			&\equiv -\frac{7}{48x+16}+\frac{13}{16x-16}+\frac{1}{4(x-1)^2}
+		\qed
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pecahan Parsial}
+		Nyatakan pecahan berikut dalam bentuk pecahan parsial.
+		\begin{enumerate}
+			\item $\frac{x+3}{x^2+5x+6}$
+			\item $\frac{x+2}{x^2(x-3)}$
+			\item $\frac{x^3-1}{(x+1)(x-4)}$
+			\item $\frac{x^3-7}{x^2+x-2}$
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Vieta}
+	Persamaan suku banyak berderajat $n$ $P(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0=0$ mempunyai akar-akar:$x_1, x_2, ..., x_n,$ maka:
+		\begin{enumerate}
+			\item $x_1+x_2+...+x_n=-\frac{a_{n-1}}{a_n}$
+			\item $(x_1x_2+x_1x_3+...+x_1x_n)+(x_2x_3+x_2x_4+...+x_2x_n)+...+x_{n-1}x_n=\frac{a_{n-2}}{a_n}$
+			\item $x_1x_2...x_n=(-1)^n
+			\frac{a_0}{a_n}$ 
+		\end{enumerate}
+		Secara umum rumus Vieta bisa dirangkum menjadi:
+		\begin{align*}
+			\sum_{1\leq i_1< i_2<...<i_k\leq n}^{}\left(\prod_{j=1}^{k}x_{i_{j}}\right)=\left(-1\right)^k\frac{a_{n-k}}{a_n}.
+		\end{align*}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Vieta}
+		Apa penjelasan lain dari rumus Vieta?
+		\begin{align*}
+			\sum_{1\leq i_1< i_2<...<i_k\leq n}^{}\left(\prod_{j=1}^{k}x_{i_{j}}\right)=\left(-1\right)^k\frac{a_{n-k}}{a_n}
+		\end{align*}
+		Rumus ini menyatakan jumlahan kombinasi perkalian akar-akar persamaan yang berbeda---bentuk $x_1 x_1$ atau $x_2 x_2$ dan sejenis tidak dihitung.
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Vieta}
+		Diberikan persamaan $x^3-6x^2-9x+14=0$. Persamaan itu memiliki akar-akar persamaan $x_1, x_2, \text{ dan }  x_3$. Dapatkan:
+		\begin{enumerate}
+			\item $x_1+x_2+x_3$
+			\item $x_1x_2+x_1x_3+x_2x_3$
+			\item $x_1x_2x_3$.
+		\end{enumerate}
+		
+		\begin{block}{Jawab:}
+			Karena polinomialnya berderajat 3, maka $n=3$. Sehingga,
+			\begin{enumerate}
+				\item $x_1+x_2+x_3=-\frac{a_{3-1}}{a_3}=-\frac{-6}{1}=6$
+				\item $x_1x_2+x_1x_3+x_2x_3=\frac{a_{3-2}}{a_3}=\frac{-9}{1}=-9$
+				\item $x_1x_2x_3=(-1)^3\frac{a_0}{a_3}=-\frac{14}{1}=-14$
+			\end{enumerate}
+		\end{block}
+		Jadi, $x_1+x_2+x_3=6$, $x_1x_2+x_1x_3+x_2x_3=-9$ dan $x_1x_2x_3=-14.$
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Vieta}
+		
+		\begin{enumerate}
+			\item Diberikan persamaan $x^3+2x^2-5x-6=0$. Dapatkan:
+			\begin{enumerate}
+				\item $x_1+x_2+x_3$.
+				\item $x_1x_2+x_1x_3+x_2x_3$.
+				\item $x_1x_2x_3$.
+				
+			\end{enumerate}
+			\item Persamaan $x^3-3x^2-x+a=0$ mempunyai dua akar yang saling berlawanan. Dapatkan hasil kali ketiga akar persamaan tersebut.
+			\item Salah satu solusi dari $x^4-5x^3+5x^2+5x-6=0$ adalah $2$. Dapatkan jumlah akar yang lain dari persamaan itu!
+			\item Akar-akar dari persamaan suku banyak $3z^3-2z^2+z-1=0$ adalah $z_1, z_2,$ dan $z_3$. Fungsi suku banyak dengan akar $3z_1-1, 3z_2-1,$ dan $3z_3-1$ adalah...
+			\item Persamaan $3x^3-16x^2+rx-6=0$ mempunyai sepasang akar yang saling berkebalikan. Tentukan nilai $r$.
+		\end{enumerate}	
+	\end{frame}
+	
+	
+	\begin{frame}
+		\frametitle{Penerapan Polinomial pada Persoalan Sehari-hari}
+		Jumlah seluruh pertandingan dalam sebuah liga sepak bola yang menggunakan sistem $\textit{home-away}$ dapat dinyatakan dalam 
+		\begin{align}
+			S(x)=x^2-x \label{jmlpert}
+		\end{align}
+		dengan $S$ adalah jumlah seluruh pertandingan dan $x$ adalah jumlah tim dalam sebuah liga sepak bola yang bertanding.\\ Misalkan jumlah tim yang berkompetisi di sebuah liga adalah 15, maka jumlah seluruh pertandingan adalah $S(15)=15^2-15=210.$
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Penerapan Polinomial pada Persoalan Sehari-hari}
+		\begin{enumerate}
+			\item Dengan menggunakan rumus (\ref{jmlpert}) coba hitung berapa tim yang dibutuhkan jika jumlah seluruh pertandingannya adalah 306 pertandingan.
+			\item Jika diketahui tinggi suatu tabung adalah $2 \text{ dm}$ lebih dari diameter alasnya dan volumenya $784\pi \text{ dm}^3$. Tentukan panjang jari-jari alas tabung itu.
+			\item Sebuah produsen makanan ringan akan membuat kemasan berbentuk balok untuk makanan A. Lebar kemasan tersebut adalah 2 cm kurang dari panjangnya dan tinggi kemasan 5 cm lebih dari panjangnya. 
+			
+			\begin{enumerate}
+				\item Misalkan panjang kemasan itu adalah $x$, dapatkan persamaan polinomial untuk volume kemasan itu. Nyatakan dalam polinomial $V(x).$
+				\item Dapatkan kemungkinan ukuran panjang, lebar, dan tinggi dari kemasan jika volume yang diminta adalah $24 \text{ cm}^3$. 
+			\end{enumerate}
+		\end{enumerate}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Teorema Vieta}
+		\begin{enumerate}
+			\item Diketahui suku banyak $f(x)=ax(x-4)(x+1).$ Suku banyak itu melewati titik $(5,15)$. Dapatkan nilai $a$.
+			\item Diberikan persamaan $x^3-2x^2+3x-4=0$. Dapatkan $x_1+x_2+x_3$ dan $\frac{1}{x_1}+\frac{1}{x_2}+\frac{1}{x_3}$.
+			\item Diberikan persamaan $x^4-4ax^3+(3a+b)x^2+(3a-7b+c)x+60=0$. Akar-akarnya $x_1=1, x_2=2,$ dan $x_3-x_4=1$. Dapatkan nilai dari $a, b, c,$ dan $x_4$. 
+		\end{enumerate}
+		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pertanyaan Refleksi}
+		\textbf{Perhatian:}
+		\begin{itemize}
+			\item Ada 10 soal/pertanyaan di salindia (\textit{slide}) selanjutnya.
+			\item Pilih 3 soal \textbf{\textcolor{red}{selain}} $\#1,\#3$, dan $\#4$ untuk dikumpulkan.
+			\item Kumpulkan di kertas folio bergaris pada hari Kamis, 29 Agustus di istirahat pertama.
+			\item Kerjakan sendiri. Jika ada yang kurang jelas, baru berdiskusi dengan yang lain.
+			\item Silakan cari jawaban dari berbagai sumber tetapi tulis dengan bahasa Anda sendiri.
+		\end{itemize}
+		 		
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pertanyaan Refleksi}
+		\begin{enumerate}
+			\item Apa yang dimaksud dengan polinomial? Jelaskan dalam minimal 3 kalimat.
+			\item Diberikan ekspresi $\sin^2x+\sin x+3$. Ada yang mengatakan ekspresi itu adalah polinomial. Jelaskan bagaimana menyatakan ekspresi itu sebagai polinomial dan bagaimana menyatakan ekspresi itu sebagai bukan polinomial!
+			\item Jelaskan secara sederhana cara untuk menjumlahkan atau mengurangi dua polinomial atau lebih! Beri setidaknya satu contoh.
+			\item Jelaskan secara sederhana cara untuk mengalikan dua polinomial! Beri setidaknya satu contoh.
+			  
+			\seti
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pertanyaan Refleksi}
+		\begin{enumerate}
+			\conti
+			\item Diberikan pernyataan $"14 \text{ dibagi } 5 \text{ menghasilkan } 2\text{ dan}\text{ berisa }4"$. Pernyataan itu ditulis menjadi $"\frac{14}{5}=2+4"$. Jelaskan kekeliruan dan perbaikannya pada $"\frac{14}{5}=2+4"$ agar menjadi benar.
+			\item Jelaskan secara sederhana pembagian antarpolinomial---bagaimana bisa bekerja atau bagaimana proses pembagian berakhir. Beri setidaknya satu contoh.
+			
+			\item Jelaskan kapan kita menggunakan pembagian bersusun atau metode Horner dan teorema Sisa untuk mencari sisa pembagian antarpolinomial. Berikan sebuah contoh.
+			
+			
+			\seti
+		\end{enumerate}
+	
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{Pertanyaan Refleksi}
+		\begin{enumerate}
+			\conti
+			
+			\item Diberikan dua polinomial $P(x)$ dan $Q(x)$. Bagaimana menunjukkan bahwa polinomial $P(x)$ adalah faktor dari polinomial $Q(x)$? Berikan sebuah contoh.
+			
+			\item Pada proses mengubah sebuah pecahan polinomial menjadi pecahan parsial. Apa saja yang harus diperhatikan? Jelaskan dengan memberi setidaknya sebuah contoh.
+			
+			\item Diberikan sebuah persamaaan polinomial derajat 4 dalam variabel $x$. Kemungkinan penyelesaiannya adalah sebanyak 4, yaitu $x_1,x_2,x_3,\text{dan }x_4$. Bagaimana mendapatkan nilai dari $x_1x_2x_3+x_1x_2x_4+x_2x_3x_4+x_3x_4x_1$ tanpa harus mencari tahu nilai dari $x_1,x_2,x_3,\text{dan }x_4$? Berikan sebuah contoh.
+			
+		\end{enumerate}
+		
+	\end{frame}
+	
+	
+\end{document}
